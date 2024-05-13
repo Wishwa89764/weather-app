@@ -138,6 +138,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 mt-3  ">
           <div class="box rounded-4 align-content-center  ">
             <div class="row">
@@ -145,17 +146,16 @@
 
                 <div class="row">
                   <div class="col">
-                    <h6 class="dateFont" id="currentDate1" >Today</h6>
+                    <h6 class="dateFont" id="currentDate1">Today</h6>
                   </div>
                 </div>
-                <div class="row">
+
+                <div class="row mt-3 mx-1">
                   <div class="col">
-                    <select id="citySelector" class="form-select" aria-label="Default select example" >
-                      <option selected>Select a City</option>
-                      <option value="1">Galnewa</option>
-                      <option value="2">Midellewa</option>
-                      <option value="3">Negampaha</option>
-                    </select>
+                    <ul class="d-flex" >
+                      <input id="txt-city" class="form-control me-2" type="text" placeholder="Type City Name here..." aria-label="Search">
+                      <button id="btn-search" class="btn btn-outline-success" >Search</button>
+                    </ul>                   
                   </div>
                 </div>
 
@@ -165,14 +165,14 @@
 
                 <div class="row">
                   <div class="col">
-                    <img id="weatherImageToday" src="asset/img/weather2.png" width="200px" height="100px"
+                    <img id="weatherImgToday" src="asset/img/weather2.png" width="200px" height="100px"
                       class="center">
-                    <p for="lbl_temp" id="lblTodayTempName" style="text-align: center; font-size: 30px;">Cloudy</p>
+                    <p for="lbl_temp" id="tempName" style="text-align: center; font-size: 30px;">Cloudy</p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <p for="weatherImageToday" id="lblTodayTemp" style="text-align: center; font-size: 40px;">33°C</p>
+                    <p for="weatherImageToday" id="cityTemp" style="text-align: center; font-size: 40px;">33°C</p>
                     <hr class="rouded">
                   </div>
                 </div>
@@ -186,7 +186,7 @@
 
               </div>
               <div class="col-10">
-                <h3 id="current_location" style=" text-align: left;">Your Location</h3>
+                <h3 id="selected-location" style=" text-align: left;">Your Location</h3>
               </div>
             </div>
 
@@ -200,7 +200,7 @@
                 </div>
                 <div class=" row">
                     <div class="col">
-                      <h6 for="" id="wind" style="font-size: 20px; text-align: center;">13 km/h</h6>
+                      <h6 for="" id="cityWind" style="font-size: 20px; text-align: center;">13 km/h</h6>
                     </div>
                   </div>
                   <div class="row">
@@ -218,7 +218,7 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <h6 for="" id="humidity" style="font-size: 20px; text-align: center;">75%</h6>
+                      <h6 for="" id="cityHumidity" style="font-size: 20px; text-align: center;">75%</h6>
                     </div>
                   </div>
                   <div class="row">
@@ -236,7 +236,7 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <h6 for="" id="sunrise" style="font-size: 20px; text-align: center;">7:05AM</h6>
+                      <h6 for="" id="citySunrise" style="font-size: 20px; text-align: center;">7:05AM</h6>
                     </div>
                   </div>
                   <div class="row">
@@ -254,7 +254,7 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <h6 for="" id="sunset" style="font-size: 20px; text-align: center;">17:25PM</h6>
+                      <h6 for="" id="citySunset" style="font-size: 20px; text-align: center;">17:25PM</h6>
                     </div>
                   </div>
                   <div class="row">
@@ -280,7 +280,7 @@
 
               <div class="row">
                 <div class="col">
-                  
+
                 </div>
               </div>
             </div>
@@ -310,11 +310,13 @@
                   <img src="asset/img/carousel/tea-state (1).jpg" class="d-block w-100" alt="...">
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>

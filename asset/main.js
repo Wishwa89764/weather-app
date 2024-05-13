@@ -6,8 +6,7 @@ const su = document.getElementById("currentDate").textContent = date;
 document.getElementById("currentDate1").textContent = 'Today : ' + date;
 
 
-const success = (position) => {
-    console.log(position)
+const success = (position) => {    
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
@@ -55,19 +54,19 @@ function display(data) {
     const unixTimestampSunset = data.sys.sunset;
 
     const sRDateObj = new Date(unixTimestampSunrise * 1000);
-    console.log(sRDateObj)
+
     const utcString = sRDateObj.toTimeString()
-    console.log(utcString)
+ 
     const timeGMT = utcString.slice(0, -31);
-    console.log(timeGMT)
+
 
     const SsDateObj = new Date(unixTimestampSunset * 1000);
-    console.log(SsDateObj)
+ 
     const utcString1 = SsDateObj.toTimeString()
-    console.log(utcString)
+
     const timeGMTSunset = utcString1.slice(0, -31);
-    console.log(timeGMTSunset)
-    
+
+
 
     currentTemp.textContent = temperature + "°C";
     currentTempName.textContent = description;
@@ -75,15 +74,74 @@ function display(data) {
     humidities.textContent = currentHumidity + '%';
     windy.textContent = Math.round(curentWind * 3.6) + "km/h";
     time.textContent = timeGMT;
-    sunsetTime.textContent =timeGMTSunset;
+    sunsetTime.textContent = timeGMTSunset;
 
 }
-const selected_city =document.getElementById("citySelector");
-selected_city.addEventListener("change", citySelection);
 
-function citySelection(event){
-   const d = event.target.value;
-    console.log(d)
+const search_city = document.getElementById("btn-search");
+search_city.addEventListener("click", citySearch);
+
+function citySearch(event) {
+    const city = document.getElementById("txt-city").value;
+    console.log(city)
+    const selectedCityWeather = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+    //const citySearchLL = `https://api.openweathermap.org/data/2.5/weather?lat=8.0522985244333&lon=80.42465596169191&appid=${apikey}`
+    fetch(selectedCityWeather)
+        .then(res => res.json())
+        .then(data => {
+        
+            if(data.cod===200){
+                displayCityWeather(data);
+            }else{
+                alert("Sory... Your City Can't be find");
+            }
+        })
+      
 }
 
+function displayCityWeather(data) {
+    const currentTemp = document.getElementById('cityTemp');
+    const currentTempName = document.getElementById('tempName');
+    const currentTempIcon = document.getElementById('weatherImageToday');
+    const humidities = document.getElementById('cityHumidity')
+    const windy = document.getElementById('cityWind')
+    const time = document.getElementById('citySunrise')
+    const sunsetTime = document.getElementById('citySunset')
+    const location = document.getElementById('selected-location')
+
+    const temperature = Math.round(data.main.temp - 273.15);
+    const description = data.weather[0].description;
+    const iconCode = data.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+    const currentHumidity = data.main.humidity;
+    const curentWind = data.wind.speed;
+    const unixTimestampSunrise = data.sys.sunrise;
+    const unixTimestampSunset = data.sys.sunset;
+    
+
+    const sRDateObj = new Date(unixTimestampSunrise * 1000);
+  
+    const utcString = sRDateObj.toTimeString()
+ 
+    const timeGMT = utcString.slice(0, -31);
+ 
+
+    const SsDateObj = new Date(unixTimestampSunset * 1000);
+    
+    const utcString1 = SsDateObj.toTimeString()
+   
+    const timeGMTSunset = utcString1.slice(0, -31);
+   
+
+
+    currentTemp.textContent = temperature + "°C";
+    currentTempName.textContent = description;
+    currentTempIcon.src = iconUrl;
+    humidities.textContent = currentHumidity + '%';
+    windy.textContent = Math.round(curentWind * 3.6) + "km/h";
+    time.textContent = timeGMT;
+    sunsetTime.textContent = timeGMTSunset;
+    location.textContent=data.name;
+
+}
 
