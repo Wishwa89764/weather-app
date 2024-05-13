@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="asset/mystyle.css">
+
+</head>
+
+<body>
+  <div class="container align-content-center  ">
+    <div class="row ">
+      <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 mt-3">
+        <div class="box rounded-4 ">
+          <div class="row">
+            <div class="col">
+
+              <div class="row">
+                <div class="col">
+                  <h1 class="heading1" text-center>Today</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h2 style="font-size: 40px; color: brown; text-align: center;" for="heading1" id="currentDate">2 Apr
+                    2024</h2>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col">
+
+              <div class="row">
+                <div class="col">
+                  <img id="weatherImageToday" src="asset/img/weather2.png" width="200px" height="100px" class="center">
+                  <p for="lbl_temp" id="lblTodayTempName" style="text-align: center; font-size: 30px;">Cloudy</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p for="weatherImageToday" id="lblTodayTemp" style="text-align: center; font-size: 40px;">33°C</p>
+                  <hr class="rouded">
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <img src="asset/img/LocationIcon.png" alt="" width="50px" height="50px" class="center">
+
+            </div>
+            <div class="col-10">
+              <h3 id="current_location" style=" text-align: left;">Your Location</h3>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <img src="asset/img/wind.png" width="50px" height="50px" class="center"">
+                </div>
+              </div>
+              <div class=" row">
+                  <div class="col">
+                    <h6 for="" id="wind" style="font-size: 20px; text-align: center;">13 km/h</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p for="" style="text-align: center;">wind</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col ">
+                <div class="row">
+                  <div class="col">
+                    <img src="asset/img/humidity.png" class="center" width="50px" height="50px">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h6 for="" id="humidity" style="font-size: 20px; text-align: center;">75%</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p for="" style="text-align: center;">humidity</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <img src="asset/img/sunrise.png" width="50px" height="50px" class="center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h6 for="" id="sunrise" style="font-size: 20px; text-align: center;">7:05AM</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p for="" style="text-align: center;">sunrise</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <img src="asset/img/sunset.png" width="50px" height="50px" class="center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h6 for="" id="sunset" style="font-size: 20px; text-align: center;">17:25PM</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p for="" style="text-align: center;">sunset</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 mt-3  ">
+          <div class="box rounded-4 align-content-center  ">
+            <div class="row">
+              <div class="col">
+
+                <div class="row">
+                  <div class="col">
+                    <h6 class="dateFont" id="currentDate1" >Today</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <select id="citySelector" class="form-select" aria-label="Default select example" >
+                      <option selected>Select a City</option>
+                      <option value="1">Galnewa</option>
+                      <option value="2">Midellewa</option>
+                      <option value="3">Negampaha</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col">
+
+                <div class="row">
+                  <div class="col">
+                    <img id="weatherImageToday" src="asset/img/weather2.png" width="200px" height="100px"
+                      class="center">
+                    <p for="lbl_temp" id="lblTodayTempName" style="text-align: center; font-size: 30px;">Cloudy</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p for="weatherImageToday" id="lblTodayTemp" style="text-align: center; font-size: 40px;">33°C</p>
+                    <hr class="rouded">
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <img src="asset/img/LocationIcon.png" alt="" width="50px" height="50px" class="center">
+
+              </div>
+              <div class="col-10">
+                <h3 id="current_location" style=" text-align: left;">Your Location</h3>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <img src="asset/img/wind.png" width="50px" height="50px" class="center"">
+                  </div>
+                </div>
+                <div class=" row">
+                    <div class="col">
+                      <h6 for="" id="wind" style="font-size: 20px; text-align: center;">13 km/h</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p for="" style="text-align: center;">wind</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col ">
+                  <div class="row">
+                    <div class="col">
+                      <img src="asset/img/humidity.png" class="center" width="50px" height="50px">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <h6 for="" id="humidity" style="font-size: 20px; text-align: center;">75%</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p for="" style="text-align: center;">humidity</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <img src="asset/img/sunrise.png" width="50px" height="50px" class="center">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <h6 for="" id="sunrise" style="font-size: 20px; text-align: center;">7:05AM</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p for="" style="text-align: center;">sunrise</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <img src="asset/img/sunset.png" width="50px" height="50px" class="center">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <h6 for="" id="sunset" style="font-size: 20px; text-align: center;">17:25PM</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p for="" style="text-align: center;">sunset</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-lg-3 col-md-6 col-sm-12 align-content-center ">
+            <div class="rectangle rounded-4 ">
+              <div class="row">
+                <div class="col">
+                  <h1 class="center">Day</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 align-content-center ">
+            <div class="rectangle rounded-4 "></div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 align-content-center ">
+            <div class="rectangle rounded-4 "></div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 align-content-center ">
+            <div class="rectangle rounded-4 "></div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col">
+            <div id="carouselExample" class="carousel slide w-50 center ">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="asset/img/carousel/blue-sky.jpg" class="d-block w-100 " alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/img/carousel/border.jpg" class="d-block w-100 " alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/img/carousel/tea-state (1).jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+      <script src="asset/main.js"></script>
+</body>
+
+</html>
